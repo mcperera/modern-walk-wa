@@ -17,7 +17,7 @@ const data = {
 
 function ProductCard() {
   return (
-    <div className="relative flex flex-col items-center h-[400px] w-auto text-center rounded-2xl shadow-xl border-gray-100 border-[1px]">
+    <div className="relative flex flex-col items-center h-[400px] w-auto text-center rounded-2xl shadow-xl border-gray-100 border-[1px] cursor-pointer">
       <h3 className="font-semibold text-base md:text-lg p-5 ">{data.title}</h3>
       <Image
         className="mb-5"
