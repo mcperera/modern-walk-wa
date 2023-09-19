@@ -20,15 +20,16 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### Component Details
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Showcase Component
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This component takes 1 mandetory prop and two optional props. When the component is in the mobile view, It will show only one Card per row. This component uses the function `getShowcaseData` to fetch data from the API with Next.js SSR features.
 
-## Deploy on Vercel
+- numberOfItems - This is the mandetory prop and it represents the API data limit.
+- category - This is an optional prop which is for category selections. When there is no category option it will show all the category related data.
+- columns - This prop controls the number of Cards of a particular row.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### ProductCard Component
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This component take product data as product prop and based on the data it will change the component design.
