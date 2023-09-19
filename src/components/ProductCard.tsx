@@ -30,7 +30,7 @@ function ProductCard({ product }: IProductCard) {
       <div
         className={`${
           category === Categories.men ? "bg-custom-green" : "bg-custom-red"
-        } rounded-2xl py-5 px-10 absolute bottom-0 right-0 left-0`}
+        } rounded-2xl py-5 px-6 absolute bottom-0 right-0 left-0`}
       >
         <span className="font-semibold text-custom-blue block mb-2">{`Rs ${price}`}</span>
         <p className="text-sm line-clamp-4">{description}</p>

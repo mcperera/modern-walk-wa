@@ -31,7 +31,7 @@ async function Showcase({ numberOfItems, category, columns = 4 }: IShowcase) {
         gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
         gridGap: 16,
       }}
-      className="py-10"
+      className="py-10 showcase"
     >
       {data.map((product: any) => {
         return <ProductCard key={product.id} product={...product} />;
