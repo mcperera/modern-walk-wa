@@ -1,40 +1,39 @@
 import React from "react";
 import Image from "next/image";
+import { Categories } from "@/lib/types";
 
-const data = {
-  id: 3,
-  title: "Mens Cotton Jacket",
-  price: 55.99,
-  description:
-    "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-  category: "men's clothing",
-  image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-  rating: {
-    rate: 4.7,
-    count: 500,
-  },
-};
+interface IProductCard {
+  product: {
+    title: string;
+    image: string;
+    category: Categories;
+    price: number;
+    description: string;
+  };
+}
 
-function ProductCard() {
+function ProductCard({ product }: IProductCard) {
+  const { title, image, category, price, description } = product;
+
   return (
-    <div className="relative flex flex-col items-center h-[400px] w-auto text-center rounded-2xl shadow-xl border-gray-100 border-[1px] cursor-pointer">
-      <h3 className="font-semibold text-base md:text-lg p-5 ">{data.title}</h3>
+    <div className="relative flex flex-col items-center min-h-[400px] w-auto text-center rounded-2xl shadow-xl border-gray-100 border-[1px] cursor-pointer">
+      <h3 className="font-semibold text-base md:text-lg line-clamp-1 my-5 mx-7">
+        {title}
+      </h3>
       <Image
         className="mb-5"
-        src={data.image}
-        width={150}
+        src={image}
+        width={110}
         height={300}
-        alt={data.title}
+        alt={title}
       />
       <div
         className={`${
-          data.category === "men's clothing"
-            ? "bg-custom-green"
-            : "bg-custom-red"
+          category === Categories.men ? "bg-custom-green" : "bg-custom-red"
         } rounded-2xl py-5 px-10 absolute bottom-0 right-0 left-0`}
       >
-        <span className="font-semibold text-custom-blue block mb-2">{`Rs ${data.price}`}</span>
-        <p className="text-sm line-clamp-4">{data.description}</p>
+        <span className="font-semibold text-custom-blue block mb-2">{`Rs ${price}`}</span>
+        <p className="text-sm line-clamp-4">{description}</p>
       </div>
     </div>
   );
